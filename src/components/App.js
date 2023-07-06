@@ -1,5 +1,5 @@
 import SidebarPage from "./sidebar/SidebarPage";
-import EditorPage from "./editor/editorPage";
+import EditorPage from "./editor/EditorPage";
 import store from "../util/Store.js";
 import { popRouter } from "../util/router.js";
 
