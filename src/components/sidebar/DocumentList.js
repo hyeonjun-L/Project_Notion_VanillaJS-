@@ -7,7 +7,6 @@ export default class DocumentList {
     this.$list = document.createElement("div");
     this.$list.classList.add("document-list");
     this.state = store.state.documentsTree;
-    this.foldedList = getItem("folded", []);
     $target.appendChild(this.$list);
 
     store.subscribeSidebar(() => {
@@ -113,6 +112,7 @@ export default class DocumentList {
   }
 
   render() {
+    this.foldedList = getItem("folded", []);
     const { pathname } = window.location;
     this.documentId = pathname.split("/")[2];
 
