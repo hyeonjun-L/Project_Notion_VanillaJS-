@@ -188,9 +188,13 @@ input:focus {
   justify-content: center;
   flex-wrap: wrap;
 
-  width: 70%;
+  width: 480px;
   height: 40px;
   margin: auto;
+}
+
+.document-toolbar img {
+  pointer-events: none;
 }
 
 .document-toolbar button {
