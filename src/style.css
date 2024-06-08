@@ -85,15 +85,16 @@ input:focus {
   font-weight: 700;
   color: aliceblue;
 
-  margin: 30% 5%;
+  margin: 10% 5%;
 
   cursor: pointer;
 }
 
 .document-list {
   padding: 0 0 7px 5px;
-  max-height: 70%;
   overflow: auto;
+  flex-grow: 0;
+  height: 100%;
 
   border: 1px solid rgb(175, 174, 174);
   border-right: none;
