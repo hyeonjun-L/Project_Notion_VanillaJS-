@@ -11,7 +11,7 @@ export default class DocumentListEditor {
     this.render();
   }
 
-  initEvent() {
+  async initEvent() {
     this.$editor.addEventListener("click", async (event) => {
       event.preventDefault();
       const action = event.target.dataset.action;
@@ -34,7 +34,13 @@ export default class DocumentListEditor {
           targetId: this.$target.id,
         });
       } else if (action === "delete") {
-        store.documentDelete(this.$target.id);
+        await store.documentDelete(this.$target.id);
+        const currentPath = window.location.pathname;
+        const currentId = currentPath.split("/")[2];
+        if (currentId === this.$target.id) {
+          history.pushState(null, null, "/");
+          window.location.reload();
+        }
       }
     });
   }
