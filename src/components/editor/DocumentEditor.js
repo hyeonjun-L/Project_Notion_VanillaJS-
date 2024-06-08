@@ -31,21 +31,6 @@ export default class DocumentEditor {
       setItem(this.documentId, { content, saveTime: currentTime });
       timer = setTimeout(async () => {
         await store.documentContentPut({ id: this.documentId, content });
-        // 자동으로 link 설정 코드(a 태그 클릭 안되는 이슈 발생)
-
-        // const { documentsTree } = store.state;
-        // documentsTree.forEach(({ id, title }) => {
-        //   const regex = new RegExp(title);
-        //   const copyContent = content;
-        //   content = content.replace(
-        //     regex,
-        //     `<link herf="/documents/${id}">링크</link>`
-        //   );
-        //   if (copyContent !== content) {
-        //     document.execCommand("createLink", false, "/url");
-        //     // this.$editor.innerHTML = content;
-        //   }
-        // });
       }, delay);
     });
 
